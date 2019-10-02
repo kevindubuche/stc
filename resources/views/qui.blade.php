@@ -11,7 +11,7 @@
                                 <div class="item active">
                                     <img src="{{url('formation.jpg')}}"> 
                                     <div class="carousel-caption" style="background-color:#024292; box-shadow:2px 2px 3px; opacity:0.7; border-radius:16px;"> 
-                                        <h1><strong>Standart Training Center</strong></h1>
+                                     
                                         <h4>QUI SOMMES-NOUS ?</h4>
                                     </div>                                 
                                 </div>
@@ -92,22 +92,22 @@
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img src="{{url('group.jpg')}}"> 
+                                    <img src="{{asset('group.jpg')}}"> 
                                     <div class="carousel-caption" > 
                                         <div class="col-lg-12 col-md-12 col-sm-12">
-                                            <section class=" col-lg-6 col-md-6 col-sm-6 " >
-                                            <div  class="text-center">
-                                            <h4 style="text-align:justify; "><strong>La formation réseau Cisco ICND1 offerte par le STC est le point de départ pour 
+                                            <section class=" col-lg-7 col-md-7 col-sm-10 col-xs-12 " >
+                                            
+                                            <h4><strong>La formation réseau Cisco ICND1 offerte par le STC est le point de départ pour 
                                             tous les professionnels amenés à travailler en environnement Cisco. Elle permet d’acquérir les connaissances
                                              et compétences nécessaires pour installer, faire fonctionner, configurer et vérifier les réseaux IPv4 et IPv6 ...
                                               </strong></h4>
-                                            </div>
+                                            
                                             </section>
-                                            <section class="col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-lg-4 col-md-4 col-sm-4 " >
-                                            <div  class="text-center">
+                                            <section class="col-lg-4 col-md-4 col-sm-10 col-xs-12 " >
+                                            
                                             <h5 style="text-align:justify; "> ...
                                               y compris la configuration des commutateurs LAN, la connexion aux réseaux WAN et l'identification des menaces pour la sécurité de base. </h5>
-                                            </div>
+                                            
                                             </section>
                                         </div>
                                    </div>
@@ -118,6 +118,8 @@
                          </div>
                     <hr >
 <!-- end carousel_____ -->
+
+
 
 
 

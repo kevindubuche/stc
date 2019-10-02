@@ -7,8 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-<div class='container' style="width:95%;">
-        <table id='list' class=' display'>
+<div class='container table-responsive' >
+        <table id='list' class=' display   table table-bordered table-striped table-condensed'>
+               <caption>
+                  <h4 style="color:#024292;">LISTE DES RESERVATIONS POUR UN COURS</h4>
+                </caption>
                 <thead>
                     <tr>
                         <th>id_reservation</th>
@@ -21,6 +24,7 @@
                         <th>date_cours</th>
                         <th>created_at</th>
                         <th>updated_at</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
 
@@ -32,11 +36,52 @@
                     <td> {{ $uneReservation->id_cours}}</td>
                     <td> {{ $uneReservation->nom_user}}</td>
                     <td> {{ $uneReservation->prenom_user}}</td>
+                    <td> {{ $uneReservation->adresse}}</td>
                     <td> {{ $uneReservation->email_user}}</td>
                     <td> {{ $uneReservation->telephone}}</td>
                     <td> {{ $uneReservation->date_cours}}</td>
                     <td> {{ $uneReservation->created_at}}</td>
                     <td> {{ $uneReservation->updated_at}}</td>
+                    <td><a href="{{url('delete')}}/{{$uneReservation->id_reservation}}"><button class=" btn btn-danger">Delete</button></a></td>
+
+                  </tr>
+                    @endforeach
+
+                </tbody>
+            </table>
+</div>
+
+<!-- TABLE COMMENTAIRES-->
+<div class='container table-responsive' >
+        <table id='list' class=' display   table table-bordered table-striped table-condensed'>
+               <caption>
+                  <h4 style="color:#024292;">LISTE DES QUESTIONS ET COMMENTAIRES</h4>
+                </caption>
+                <thead>
+                    <tr>
+                        <th>id_commentaires</th>
+                        <th>nom_user</th>
+                        <th>email_user</th>
+                        <th>telephone</th>
+                        <th>comment</th>
+                        <th>created_at</th>
+                        <th>updated_at</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach ($allComment as $unComment)
+                      <tr id='rowC' style='cursor:pointer;'>
+                   
+                    <td> {{ $unComment->id_commentaires}}</td>
+                    <td> {{ $unComment->nom_user}}</td>
+                    <td> {{ $unComment->email_user}}</td>
+                    <td> {{ $unComment->telephone}}</td>
+                    <td> {{ $unComment->comment}}</td>
+                    <td> {{ $unComment->created_at}}</td>
+                    <td> {{ $unComment->updated_at}}</td>
+                    <td><a href="{{url('deleteComment')}}/{{$unComment->id_commentaires}}"><button class=" btn btn-danger">Delete</button></a></td>
 
                   </tr>
                     @endforeach

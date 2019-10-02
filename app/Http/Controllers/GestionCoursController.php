@@ -9,6 +9,7 @@ use App\Http\Requests\CommentaireFormRequest;
 use App\Model\GestionDesCours\Reservation;
 use App\Model\GestionDesCours\commentaire;
 use App\Model\GestionDesCours\actualite;
+use DB;
 
 
 class GestionCoursController extends Controller
@@ -35,6 +36,27 @@ class GestionCoursController extends Controller
         return view('formulaire')->with('idDuCours',$id);
         //return response()->view('formulaire',['idDuCours'=>$id]);
     }
+    public function delete($id)
+    {
+       DB::table('reservations')->where('id_reservation',$id)->delete();
+        return response()->view('listeReservation',['allReservation'=>Reservation::all(),'allComment'=>commentaire::all()]);
+
+    }
+    public function deleteComment($id)
+    {
+       DB::table('commentaires')->where('id_commentaires',$id)->delete();
+        return response()->view('listeReservation',['allReservation'=>Reservation::all(),'allComment'=>commentaire::all()]);
+
+    }
+        /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function unActu($id)
+    {
+        return response()->view('unActu',['actu'=>actualite::find($id),'recentActu'=>actualite::paginate(10)]);
+    }
     
     /**
      * Display a listing of the resource.
@@ -43,7 +65,7 @@ class GestionCoursController extends Controller
      */
     public function listeReservation()
     {
-        return response()->view('listeReservation',['allReservation'=>Reservation::all()]);
+        return response()->view('listeReservation',['allReservation'=>Reservation::all(),'allComment'=>commentaire::all()]);
     }
     /**
      * Show the form for creating a new resource.
@@ -98,7 +120,8 @@ class GestionCoursController extends Controller
      */
     public function actualite()
     {
-        return response()->view('actualite',['allActu'=>actualite::all()]);
+        
+        return response()->view('actualite',['allActu'=>actualite::paginate(2), 'recentActu'=>actualite::paginate(10)]);
     }
 
 

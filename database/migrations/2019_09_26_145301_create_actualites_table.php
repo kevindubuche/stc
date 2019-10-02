@@ -14,7 +14,7 @@ class CreateActualitesTable extends Migration
     public function up()
     {
         Schema::create('actualites', function (Blueprint $table) {
-            $table->bigIncrements('id_actu');
+            $table->bigIncrements('id');
             $table->string('date_post');          
             $table->string('title');
             $table->string('source');

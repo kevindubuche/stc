@@ -11,7 +11,7 @@
                                     <img src="{{url('im.jpg')}}"> 
                                     <div class="carousel-caption" style="background-color:#024292; box-shadow:2px 2px 3px; opacity:0.7; border-radius:16px;"> 
                                         
-                                        <h4>ACTUALITÉS</h4>
+                                        <h4>ACTUALITES</h4>
                                     </div>                                 
                                 </div>
                             </div>                  
@@ -29,7 +29,7 @@
              <hr>     
                     <h5><strong><a class=" glyphicon glyphicon-envelope" style="color:rgba(237,188,27,0.8);"> </a>    stc@gmail.com</strong></h5>                                   
              <hr>            
-                    <h5><strong><a class=" glyphicon glyphicon-time" style="color:rgba(237,188,27,0.8);"> </a>    Tous les jours de 9 heures AM à 3 heures PM</strong></h5>       
+                    <h5><strong><a class=" glyphicon glyphicon-time" style="color:rgba(237,188,27,0.8);"> </a>    Tous les jours de 9 heures AM a 3 heures PM</strong></h5>       
             <hr>
                     <img src="{{asset('minibm.jpg')}}" >
 
@@ -37,24 +37,34 @@
         
         </div><!-- end left part -->
 
-        <div class="col-lg-7 col-md-7 col-sm-2 col-xs-12" style="padding-right:20px; box-shadow: 1px 1px 1px #348978; border-radius:20px;"><!-- start middle part -->
+        <div class="col-lg-7 col-md-7 col-sm-2 col-xs-12" style="padding-right:20px;"><!-- start middle part -->
         <!--CONTENU DES ACTUS -->
-            <div class="jumbotron " style="margin-top:5px;">    
-                <h5 style="color:#024292;" class="text-center">TOUTES LES ACTUALITÉS DES IT   </h5>
-                <hr >
-                @foreach($allActu as $unActu)
-                <h3> {!! $unActu->title !!} </h3><br>
-                <h6>{{$unActu->date_post}}</h6><br>
-                <h4>{{substr(strip_tags($unActu->content),0,300)}}
-                    {{strlen(strip_tags($unActu->content))>300 ? "...":""}}
-                </h4><br>
-                <a href="{{url('unActu')}}/{{$unActu->id}}" class="btn btn-primary"> En sanoir plus <h6 class="glyphicon glyphicon-chevron-right"></h6> </a>
+            <div class="jumbotron " style="margin-top:5px;">   
+                 
+                <h5 style="color:#024292;" class="text-center">{!! $actu->title !!}   </h5>
+                <hr>
+                <div class="sharethis-inline-share-buttons"></div>
+                <h6>{{$actu->date_post}}</h6><br>
+                <h4>{!!$actu->content !!}</h4>
+
+               
+     
+               
+
+
+                    
+         
+                    <div id="post_data">
+
+                    </div>
+
+
+
+
                 <hr >  <hr >
 
-                @endforeach
-                {{$allActu->links()}}
                </div>
-    
+    <hr>
     <!-- FIN CONTENU -->
     
    
@@ -63,19 +73,49 @@
 
         <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12"><!-- start right part -->
             <div  style="margin-top:5px; background-color:#dee;">    
-                <h5 style="color:#024292;"class="text-center"><strong >Plus récentes</strong></h5>
+                <h5 style="color:#024292;"class="text-center"><strong >Fil d'actualites </strong></h5>
                 <hr >
-                    @foreach($recentActu as $resActu)
+                @foreach($recentActu as $resActu)
                      <ul >
                         <li><a href="{{url('unActu')}}/{{$resActu->id}}"> {!!$resActu->title !!}</a></li>
                         <hr>
                       </ul>
                       @endforeach 
-    
+               
+    <hr><hr>
         </div><!-- end right part -->
     
-    </div><!-- end row-->       
+    </div><!-- end row-->
+          
+
 
 </div><!-- end container -->
+
+
+ <script type="text/javascript" charset="utf8" src="{{ asset('js/bootstrap.min.js') }}"></script>
+          <script type="text/javascript" charset="utf8" src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+          <script type="text/javascript" charset="utf8" src="{{ asset('js/all.js') }}"></script>
+          <script type="text/javascript" charset="utf8" src="{{ asset('js/custom.js') }}"></script>
+<script>
+     $(document).ready(function()
+    {
+       $('#btn_more').click(function(){
+console.log('okkkkk');
+var actu=($actu->title).val();
+$.ajax({
+                type:'GET',
+                data:{actu: actu},
+                success:function(resultat){
+                    console.log('yessssss');
+                },
+                error:function(resultat){
+                    console.log('nooooo');
+                    console.log(resultat);
+                }
+            });
+        });
+    });
+</script>
+
 
 @endsection

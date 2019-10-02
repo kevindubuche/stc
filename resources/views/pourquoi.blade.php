@@ -11,7 +11,7 @@
                                 <div class="item active">
                                     <img src="{{url('stat.jpg')}}"> 
                                     <div class="carousel-caption" style="background-color:#024292; box-shadow:2px 2px 3px; opacity:0.7; border-radius:16px;"> 
-                                        <h1><strong>Standart Training Center</strong></h1>
+                                       
                                         <h4>POURQUOI SE CERTIFIER ?</h4>
                                     </div>                                 
                                 </div>
@@ -43,7 +43,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12">        
                         <h3> <i class="glyphicon glyphicon-time  "></i>Pourquoi se certifier ?</h3>
                         <p style="text-align:justify; color:#024292; ">
-                        Le groupe Global Knowledge conduit, par ailleurs, sa propre enquête depuis plus de 10 
+                        Le STC conduit, par ailleurs, sa propre enquête depuis plus de 10 
                         ans maintenant auprès de ses clients et de tous les professionnels IT dans le monde
                          pour connaître l'impact de la formation et de la certification, à la fois sur la motivation,
                           ou encore le salaire.   
@@ -68,7 +68,7 @@
                         <h3> <i class="glyphicon glyphicon-time  "></i>Choisir une certification</h3>
                         <p style="text-align:justify; color:#024292; ">Le niveau des certifications professionnelles disponibles
                          s'est accru - tant en termes de technologies couvertes, que du niveau d'expertise atteint. Les formations 
-                         Global Knowledge préparent aux certifications des plus grands constructeurs IT tels que Cisco, Microsoft, 
+                         STC préparent aux certifications des plus grands constructeurs IT tels que Cisco, Microsoft, 
                          AWS, Citrix, VMware, etc</p>    
                 </div><!-- end col -->
             
@@ -77,7 +77,7 @@
                         <h3> <i class="glyphicon glyphicon-time  "></i>Choisir une certification</h3>
                         <p style="text-align:justify; color:#024292; ">Ces certifications valident la connaissance des technologies spécifiques 
                         ainsi que les compétences opérationnelles métiers ou transversales.
-                    le STC est leader sur la formation et l'accompagnement à la certification Microsoft, et certifie un grand nombre des partenaires accrédités Cisco.
+                    Le STC est leader sur la formation et l'accompagnement à la certification Microsoft, et certifie un grand nombre des partenaires accrédités Cisco.
 </p>    
                 </div><!-- end col -->
             </div><!-- end row -->

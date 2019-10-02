@@ -17,7 +17,8 @@ class CreateCoursTable extends Migration
             $table->bigIncrements('id_cours');
             $table->string('nom_cours');
             $table->string('duree_cours');
-            $table->decimal('prix_cours',9,3);
+            $table->decimal('prix_cours',9,2);
+            $table->string('lieu_cours');
             $table->text('comm_cours');
            // $table->timestamps();
         });

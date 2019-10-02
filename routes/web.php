@@ -22,4 +22,7 @@ Route::get('/pourquoi','GestionCoursController@pourquoi');
 Route::get('/instructeur','GestionCoursController@instructeur');
 Route::get('/contact','GestionCoursController@contact');
 Route::get('/actualite','GestionCoursController@actualite')->name('actualite');
-Route::get('/admOnly','GestionCoursController@listeReservation');
+Route::get('/admonly','GestionCoursController@listeReservation');
+Route::get('/unActu/{id}','GestionCoursController@unActu');
+Route::get('/delete/{id}','GestionCoursController@delete');
+Route::get('/deleteComment/{id}','GestionCoursController@deleteComment');
