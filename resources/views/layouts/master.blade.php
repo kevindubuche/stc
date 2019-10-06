@@ -76,6 +76,8 @@
            @yield('instructeur')
            @yield('contact')
            @yield('actualite')
+           @yield('login')
+           @yield('editionActu')
 
            <div class="row" ><!-- start footer -->
              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -130,6 +132,8 @@
           <script type="text/javascript" charset="utf8" src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
           <script type="text/javascript" charset="utf8" src="{{ asset('js/all.js') }}"></script>
           <script type="text/javascript" charset="utf8" src="{{ asset('js/custom.js') }}"></script>
+
+          
 
 
           

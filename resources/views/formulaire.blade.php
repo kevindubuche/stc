@@ -46,7 +46,7 @@
 
                     <div class="form-group has-feedback">
                          <label for="email_user">Votre email :</label>
-                         <input type="email" class="form-control" name="email_user" id="email_user" placeholder="Email" required="required" style="border-radius:50px;">
+                         <input type="email" class="form-control" name="email_user" id="email_user" placeholder="pierrepatrick@gmail.com" required="required" style="border-radius:50px;">
                           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     </div>
 
@@ -66,7 +66,7 @@
                    <div class="form-group has-feedback">
                       <input type="hidden" name="id_cours" value="{{$idDuCours}}" >
                       <div class="row">
-                      <button class='btn btn-primary'type=" button" style='border-radius:50px;'>Réserver</button>                   
+                      <button class='btn btn-primary'type=" button" style='float:right;border-radius:50px;margin-right:20px;'>Réserver</button>                   
                      </div>
 </div>
 

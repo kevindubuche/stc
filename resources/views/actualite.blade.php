@@ -48,7 +48,7 @@
                 <h4>{{substr(strip_tags($unActu->content),0,300)}}
                     {{strlen(strip_tags($unActu->content))>300 ? "...":""}}
                 </h4><br>
-                <a href="{{url('unActu')}}/{{$unActu->id}}" class="btn btn-primary"> En sanoir plus <h6 class="glyphicon glyphicon-chevron-right"></h6> </a>
+                <a href="{{url('unActu')}}/{{$unActu->id}}" class="btn btn-primary"> En savoir plus <h6 class="glyphicon glyphicon-chevron-right"></h6> </a>
                 <hr >  <hr >
 
                 @endforeach

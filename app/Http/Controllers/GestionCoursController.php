@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\GestionDesCours\Cour;
 use App\Http\Requests\ReservationFormRequest;
 use App\Http\Requests\CommentaireFormRequest;
+use App\Http\Requests\ActuFormRequest;
 use App\Model\GestionDesCours\Reservation;
 use App\Model\GestionDesCours\commentaire;
 use App\Model\GestionDesCours\actualite;
@@ -39,14 +40,24 @@ class GestionCoursController extends Controller
     public function delete($id)
     {
        DB::table('reservations')->where('id_reservation',$id)->delete();
-        return response()->view('listeReservation',['allReservation'=>Reservation::all(),'allComment'=>commentaire::all()]);
-
+      return redirect()->route('admonly');
+      
     }
     public function deleteComment($id)
     {
        DB::table('commentaires')->where('id_commentaires',$id)->delete();
-        return response()->view('listeReservation',['allReservation'=>Reservation::all(),'allComment'=>commentaire::all()]);
-
+       return redirect()->route('admonly');
+       
+    }
+    public function deleteCours($id)
+    {
+        DB::table('cours')->where('id_cours',$id)->delete();
+        return redirect()->route('admonly');
+    }
+    public function deleteActu($id)
+    {
+        DB::table('actualites')->where('id',$id)->delete();
+        return redirect()->route('admonly');
     }
         /**
      * Display a listing of the resource.
@@ -57,7 +68,7 @@ class GestionCoursController extends Controller
     {
         return response()->view('unActu',['actu'=>actualite::find($id),'recentActu'=>actualite::paginate(10)]);
     }
-    
+  
     /**
      * Display a listing of the resource.
      *
@@ -65,7 +76,8 @@ class GestionCoursController extends Controller
      */
     public function listeReservation()
     {
-        return response()->view('listeReservation',['allReservation'=>Reservation::all(),'allComment'=>commentaire::all()]);
+        return response()->view('listeReservation',['allReservation'=>Reservation::all(),'allComment'=>commentaire::all(),
+        'allActu'=>actualite::all(),'allCours'=>Cour::all()]);
     }
     /**
      * Show the form for creating a new resource.
@@ -196,6 +208,23 @@ class GestionCoursController extends Controller
     public function update(Request $request, $id)
     {
         //
+    }
+
+    public function editActu($id)
+    {    
+        return response()->view('editionActu',['unActu'=>actualite::find($id)]);
+    }
+
+    public function updateActu(ActuFormRequest $request)
+    {
+        $actu= actualite::find($request->get('id'));
+        $actu->date_post=$request->get('date_post');
+        $actu->title=$request->get('title');
+        $actu->source=$request->get('source');
+        $actu->content=$request->get('content');
+        $actu->save();
+        return redirect()->route('admonly');
+
     }
 
     /**
