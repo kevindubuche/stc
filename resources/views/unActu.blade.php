@@ -41,19 +41,13 @@
         <!--CONTENU DES ACTUS -->
             <div class="jumbotron " style="margin-top:5px;">   
                  
-                <h5 style="color:#024292;" class="text-center">{!! $actu->title !!}   </h5>
+                <h3 style="color:#024292;" class="text-center"><strong>{!! $actu->title !!} </strong>  </h3>
                 <hr>
                 <div class="sharethis-inline-share-buttons"></div>
                 <h6>{{$actu->date_post}}</h6><br>
                 <h4>{!!$actu->content !!}</h4>
 
-               
-     
-               
 
-
-                    
-         
                     <div id="post_data">
 
                     </div>

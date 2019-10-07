@@ -1,7 +1,12 @@
 @extends('layouts/master')
 
 @section('login')
-
+@if($message=Session::get('error'))
+<div id="error"class="alert alert-danger alert-block">
+<button type="button" class="close" data-dismiss="alert">x</button>
+    <p>{{$message}}</p>
+</div>
+@endif
       <div class="row">
        
 

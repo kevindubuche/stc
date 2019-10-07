@@ -21,7 +21,7 @@ class loginController extends Controller
         }
         else
         {   //dd('error'); SONJE FE YON MSG PARET NAN VUE A
-            return response()->view('login');
+            return redirect()->route('login')->with('error','Error email or password');
 
         }
         
@@ -35,7 +35,7 @@ class loginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return response()->view('home');
+        return redirect()->route('home');
     }
    
    

@@ -56,7 +56,7 @@ class GestionCoursController extends Controller
     }
     public function deleteCours($id)
     {
-        DB::table('cours')->where('id_cours',$id)->delete();
+        DB::table('cours')->where('id',$id)->delete();
         return redirect()->route('admonly')->with('success','Cours deleted');
     }
     public function deleteActu($id)

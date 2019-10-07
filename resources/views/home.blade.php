@@ -104,7 +104,7 @@ position:relative; text-shadow: 1px 3px grey; animation: text 3s 1s infinite"><s
                                     
                                 <ul style="text-align:justify; ">
                                 @foreach($allCours as $cours)
-                                    <li><a href="{{url('formation')}}#{{$cours->nom_cours}}" style="color:white;">{{$cours->nom_cours}}</a></li><hr>
+                                    <li><a href="{{url('formation')}}#{{$cours->nom_cours}}" class=" glyphicon glyphicon-chevron-right"  style="color:white;">{{ $cours->nom_cours}}</a></li><br/>
                                 @endforeach
                                     
                                 </ul>

@@ -15,6 +15,7 @@
     <p>{{$message}}</p>
 </div>
 @endif
+<h2 class="text-center">WELCOME ADMINISTRATOR</h2>
 <div class='container table-responsive' >
         <table id='list' class=' display   table table-bordered table-striped table-condensed'>
                <caption>
@@ -211,7 +212,7 @@
 
            <div class="form-group has-feedback">
                 <label for="telephone">Comment :</label>
-                <input type="text" class="form-control" name="comm_cours" required="required" style="border-radius:50px;">
+                <textarea type="text" class="form-control" name="comm_cours" required="required" style="border-radius:50px;"></textarea>
 
            </div>
 
@@ -247,7 +248,7 @@
 
            <div class="form-group has-feedback">
                 <label >Content :</label>
-                <input type="text" class="form-control" name="content" required="required" style="border-radius:50px;">
+                <textarea type="text" class="form-control" name="content" required="required" style="border-radius:50px;"></textarea>
 
            </div>
 

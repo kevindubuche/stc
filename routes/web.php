@@ -36,6 +36,6 @@ Route::post('/addActu','GestionCoursController@addActu')->middleware('ifAdm');
 
 
 Route::get('/admonly','GestionCoursController@listeReservation')->name('admonly')->middleware('ifAdm');
-Route::get('/login','loginController@login');
+Route::get('/login','loginController@login')->name('login');
 Route::get('/logout','loginController@logout')->middleware('ifAdm');
 Route::post('/verificatinAdmin','loginController@verificationAdm');
