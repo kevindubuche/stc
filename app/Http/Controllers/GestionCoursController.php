@@ -7,6 +7,7 @@ use App\Model\GestionDesCours\Cour;
 use App\Http\Requests\ReservationFormRequest;
 use App\Http\Requests\CommentaireFormRequest;
 use App\Http\Requests\ActuFormRequest;
+use App\Http\Requests\CoursFormRequest;
 use App\Model\GestionDesCours\Reservation;
 use App\Model\GestionDesCours\commentaire;
 use App\Model\GestionDesCours\actualite;
@@ -27,6 +28,10 @@ class GestionCoursController extends Controller
 
         return response()->view('formation',['allCours'=>Cour::all()]);
     }
+    public function home()
+    {
+        return response()->view('home',['allCours'=>Cour::all()]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -40,24 +45,24 @@ class GestionCoursController extends Controller
     public function delete($id)
     {
        DB::table('reservations')->where('id_reservation',$id)->delete();
-      return redirect()->route('admonly');
+      return redirect()->route('admonly')->with('success','Reservation deleted');
       
     }
     public function deleteComment($id)
     {
        DB::table('commentaires')->where('id_commentaires',$id)->delete();
-       return redirect()->route('admonly');
+       return redirect()->route('admonly')->with('success','Comment deleted');
        
     }
     public function deleteCours($id)
     {
         DB::table('cours')->where('id_cours',$id)->delete();
-        return redirect()->route('admonly');
+        return redirect()->route('admonly')->with('success','Cours deleted');
     }
     public function deleteActu($id)
     {
         DB::table('actualites')->where('id',$id)->delete();
-        return redirect()->route('admonly');
+        return redirect()->route('admonly')->with('success','Actu deleted');
     }
         /**
      * Display a listing of the resource.
@@ -154,8 +159,31 @@ class GestionCoursController extends Controller
         $demande->telephone=$request->input('telephone');
         $demande->date_cours=$request->input('date_cours');
         $demande->save();
-        return redirect()->route('formation');
+        return redirect()->route('formation')->with('success','Reservation reussie');
         //return response()->json($demande);
+    }
+
+    public function addCours(CoursFormRequest $request)
+    {
+        $cours=new Cour;
+        $cours->nom_cours=$request->input('nom_cours');
+        $cours->duree_cours=$request->input('duree_cours');
+        $cours->prix_cours=$request->input('prix_cours');
+        $cours->lieu_cours=$request->input('lieu_cours');
+        $cours->comm_cours=$request->input('comm_cours');
+        $cours->save();
+        return redirect()->route('admonly')->with('success','Cours added');
+    }
+
+    public function addActu(ActuFormRequest $request)
+    {
+        $actu=new actualite;
+        $actu->date_post=$request->input('date_post');
+        $actu->title=$request->input('title');
+        $actu->source=$request->input('source');
+        $actu->content=$request->input('content');
+        $actu->save();
+        return redirect()->route('admonly')->with('success','Actu added');
     }
 
        /**
@@ -172,7 +200,7 @@ class GestionCoursController extends Controller
         $demande->telephone=$request->input('telephone');
         $demande->comment=$request->input('textarea');
         $demande->save();
-        return redirect()->route('home');
+        return redirect()->route('contact')->with('success','Envoye ! Merci ');
         //return response()->json($demande);
     }
 
@@ -209,6 +237,11 @@ class GestionCoursController extends Controller
     {
         //
     }
+    public function editCours($id)
+    {
+        return response()->view('editionCours',['unCours'=>Cour::find($id)]);
+        
+    }
 
     public function editActu($id)
     {    
@@ -223,8 +256,19 @@ class GestionCoursController extends Controller
         $actu->source=$request->get('source');
         $actu->content=$request->get('content');
         $actu->save();
-        return redirect()->route('admonly');
+        return redirect()->route('admonly')->with('success','Actu updated');
 
+    }
+    public function updateCours(CoursFormRequest $request)
+    {
+
+        $cours=Cour::find($request->get('id'));
+        $cours->nom_cours=$request->get('nom_cours');
+        $cours->duree_cours=$request->get('duree_cours');
+        $cours->prix_cours=$request->get('prix_cours');
+        $cours->comm_cours=$request->get('comm_cours');
+        $cours->save();
+        return redirect()->route('admonly')->with('success','Cours updated');
     }
 
     /**

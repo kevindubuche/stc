@@ -78,6 +78,7 @@
            @yield('actualite')
            @yield('login')
            @yield('editionActu')
+           @yield('editionCours')
 
            <div class="row" ><!-- start footer -->
              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

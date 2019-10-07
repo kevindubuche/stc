@@ -20,7 +20,7 @@ class CreateCoursTable extends Migration
             $table->decimal('prix_cours',9,2);
             $table->string('lieu_cours');
             $table->text('comm_cours');
-           // $table->timestamps();
+        // $table->timestamps();
         });
     }
 

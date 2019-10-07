@@ -8,6 +8,13 @@
 </head>
 <body>
 <a href="{{url('logout')}}"><button class=" btn btn-danger">Logout</button></a>
+<br/>
+@if($message=Session::get('success'))
+<div id="success"class="alert alert-success alert-block">
+<button type="button" class="close" data-dismiss="alert">x</button>
+    <p>{{$message}}</p>
+</div>
+@endif
 <div class='container table-responsive' >
         <table id='list' class=' display   table table-bordered table-striped table-condensed'>
                <caption>
@@ -98,7 +105,7 @@
 <!-- TABLE ACTUALITES-->
 <div class='container table-responsive' >
 
-        <table id='list2' class=' display   table table-bordered table-striped table-condensed'>
+        <table id='list3' class=' display   table table-bordered table-striped table-condensed'>
                <caption>
                   <h4 style="color:#024292;">LISTE DES ACTUALITES</h4>
                 </caption>
@@ -117,15 +124,13 @@
            
                 
                 <tbody>
-                <form   method="POST">
-               @csrf<!-- {{csrf_field()}} -->
                     @foreach ($allActu as $unActu)
                       <tr id='rowC' style='cursor:pointer;'>
                     <td> {{ $unActu->id}}</td>
                     <td> {{ $unActu->date_post}}></td>
                     <td>{{ $unActu->title}} </td>
                     <td> {{ $unActu->source}} </td>
-                    <td> <input type="text" value="{{ $unActu->content}}"></td>
+                    <td> <textarea type="text">{{ $unActu->content}}</textarea></td>
                     <td> {{ $unActu->created_at}}</td>
                     <td> {{ $unActu->updated_at}}</td>
                     <td><a href="{{url('deleteActu')}}/{{$unActu->id}}"><button onclick="return confirm('Confirmer suppresssion');"class=" btn btn-danger">Delete</button></a>
@@ -133,7 +138,6 @@
 
                   </tr>
                     @endforeach
-                    </form>
                 </tbody>
                 
             </table>
@@ -144,13 +148,13 @@
 <!-- TABLE COURS-->
 <div class='container table-responsive' >
 
-        <table id='list2' class=' display   table table-bordered table-striped table-condensed'>
+        <table id='list4' class=' display   table table-bordered table-striped table-condensed'>
                <caption>
                   <h4 style="color:#024292;">LISTE DES COURS</h4>
                 </caption>
                 <thead>
                     <tr>
-                        <th>id_cours</th>
+                        <th>id</th>
                         <th>nom_cours</th>
                         <th>duree_cours</th>
                         <th>prix_cours</th>
@@ -158,20 +162,18 @@
                         <th>comm_cours</th>
                         <th>Action</th>
                     </tr>
-                </thead>
-           
-                
+                </thead>              
                 <tbody>
                     @foreach ($allCours as $unCours)
                       <tr id='rowC' style='cursor:pointer;'>
-                    <td> {{ $unCours->id_cours}}</td>
+                    <td> {{ $unCours->id}}</td>
                     <td> {{ $unCours->nom_cours}}</td>
                     <td>{{ $unCours->duree_cours}}</td>
                     <td> {{ $unCours->prix_cours}}</td>
                     <td> {{ $unCours->lieu_cours}}</td>
-                    <td><input type="text" value="{{ $unCours->comm_cours}}"></td>
-                    <td><a href="{{url('deleteCours')}}/{{$unCours->id_cours}}"><button onclick="return confirm('Confirmer suppresssion');"class=" btn btn-danger">Delete</button></a>
-                    <a href="{{url('editActu')}}"><button type="button"class=" btn btn-info">Edit</button></a></td>
+                    <td><textarea type="text" >{{ $unCours->comm_cours}}</textarea></td>
+                    <td><a href="{{url('deleteCours')}}/{{$unCours->id}}"><button onclick="return confirm('Confirmer suppresssion');"class=" btn btn-danger">Delete</button></a>
+                    <a href="{{url('editCours')}}/{{$unCours->id}}"><button type="button"class=" btn btn-info">Edit</button></a></td>
                   </tr>
                     @endforeach
                  
@@ -179,6 +181,88 @@
                 
             </table>
 </div>
+<!--add un cours -->
+<hr><hr>
+<div class="row container">
+<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 jumbotron" style="margin-right:20px;">
+
+<form action="{{url('addCours')}}" method="POST">
+      @csrf<!-- {{csrf_field()}} -->
+      <h3>ADD UN COURS </h3>
+         <div class="form-group has-feedback">
+                <label >Nom Cours:</label>
+                <input type="text" class="form-control"  name="nom_cours"  required="required" style="border-radius:50px;">               
+           </div>
+
+           <div class="form-group has-feedback">
+                <label for="email_user">Duree :</label>
+                <input type="text" class="form-control" name="duree_cours" required="required" style="border-radius:50px;">        
+           </div>
+
+           <div class="form-group has-feedback">
+                <label for="telephone">Prix :</label>
+                <input type="number" class="form-control" name="prix_cours" required="required" style="border-radius:50px;">    
+           </div>
+
+           <div class="form-group has-feedback">
+                <label for="email_user">Lieu :</label>
+                <input type="text" class="form-control" name="lieu_cours" required="required" style="border-radius:50px;">
+           </div>
+
+           <div class="form-group has-feedback">
+                <label for="telephone">Comment :</label>
+                <input type="text" class="form-control" name="comm_cours" required="required" style="border-radius:50px;">
+
+           </div>
+
+  
+               
+             <div class="row">
+             <button class='btn btn-primary'type=" button" style='border-radius:50px;'>Add</button>                   
+            </div>
+
+     </form>
+
+</div>
+
+<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 jumbotron" >
+
+<form action="{{url('addActu')}}" method="POST">
+      @csrf<!-- {{csrf_field()}} -->
+      <h3>ADD UN ACTU </h3>
+         <div class="form-group has-feedback">
+                <label >Date post:</label>
+                <input type="text" class="form-control"  name="date_post"  required="required" style="border-radius:50px;">               
+           </div>
+
+           <div class="form-group has-feedback">
+                <label >Title :</label>
+                <input type="text" class="form-control" name="title" required="required" style="border-radius:50px;">        
+           </div>
+
+           <div class="form-group has-feedback">
+                <label >Source :</label>
+                <input type="text" class="form-control" name="source" required="required" style="border-radius:50px;">    
+           </div>
+
+           <div class="form-group has-feedback">
+                <label >Content :</label>
+                <input type="text" class="form-control" name="content" required="required" style="border-radius:50px;">
+
+           </div>
+
+  
+              
+             <div class="row">
+             <button class='btn btn-primary'type=" button" style='border-radius:50px;'>Add</button>                   
+            </div>
+
+     </form>
+
+</div>
+</div>
+
+
 
     <!--pour datatable -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.datatables.css') }}">
@@ -196,7 +280,7 @@
     <script>
     $(document).ready(function()
     {
-        $('#list,#list2').DataTable({  
+        $('#list,#list2,#list3,#list4').DataTable({  
 
             select:true,
             "language": {
@@ -218,10 +302,8 @@
 
         );
 
-    $('#delete').click(function()
-    {
-        ;
-    });
+    
+    
 
      
     });

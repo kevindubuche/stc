@@ -103,15 +103,10 @@ position:relative; text-shadow: 1px 3px grey; animation: text 3s 1s infinite"><s
                                 <h4><a class=" glyphicon glyphicon-check" style="color:white; text-align:justify;"> </a>  Nos formations</h4>
                                     
                                 <ul style="text-align:justify; ">
-                                    <li><a href="{{url('formation')}}#CCNA Routing and Switching" style="color:white;">CCNA Routing and Switching</a></li>
-                                    <li><a href="{{url('formation')}}#CCNA Voice" style="color:white;">CCNA Voice</a></li><hr>
-                                    <li><a href="{{url('formation')}}#CCNA Security" style="color:white;">CCNA Security</a></li>
-                                    <li><a href="{{url('formation')}}#CCNP" style="color:white;">CCNP</a></li><hr>
-                                    <li><a href="{{url('formation')}}#CompTIAA+" style="color:white;">CompTIAA+</a></li>
-                                    <li><a href="{{url('formation')}}#System administration with Linux" style="color:white;">System administration with Linux</a></li><hr>
-                                    <li><a href="{{url('formation')}}#Windows Server 20XX" style="color:white;">Windows Server 20XX</a></li>
-                                    <li><a href="{{url('formation')}}#Oracle" style="color:white;">Oracle</a></li><hr>
-                                    <li><a href="{{url('formation')}}#Airmax (Ubiquiti)" style="color:white;">Airmax (Ubiquiti)</a></li>
+                                @foreach($allCours as $cours)
+                                    <li><a href="{{url('formation')}}#{{$cours->nom_cours}}" style="color:white;">{{$cours->nom_cours}}</a></li><hr>
+                                @endforeach
+                                    
                                 </ul>
                         </div><!-- end col -->
 

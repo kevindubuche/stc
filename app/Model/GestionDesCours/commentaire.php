@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class commentaire extends Model
 {
-    protected $fillable=['nom_user,','email_user','telephone','textarea'];
+    protected $fillable=['nom_user,','email_user','telephone'];
     
 }

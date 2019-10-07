@@ -1,7 +1,12 @@
 @extends('layouts/master')
 
 @section('contact')
-
+@if($message=Session::get('success'))
+<div id="success"class="alert alert-success alert-block">
+<button type="button" class="close" data-dismiss="alert">x</button>
+    <p>{{$message}}</p>
+</div>
+@endif
            <!-- Carousel1 -->
            <div id="myCarousel" class="carousel slide" data-ride="carousel">
                             <!-- Wrapper for slides -->
@@ -75,15 +80,13 @@
                       <div class="row">
                       <button class='btn btn-primary'type=" button" style='border-radius:50px;'>Soumettre</button>                   
                      </div>
-</div>
-
 
               </form>
 
         </div>
      </div>
 
-            
+  </div>          
 @include('layouts.partials._choixPartial')
 
 

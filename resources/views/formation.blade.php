@@ -1,7 +1,12 @@
 @extends('layouts/master')
 
  @section('formation')
-
+ @if($message=Session::get('success'))
+<div id="success"class="alert alert-success alert-block">
+<button type="button" class="close" data-dismiss="alert">x</button>
+ <p>{{$message}}</p>
+</div>
+@endif
     
  <!-- Carousel1 in index -->
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -21,7 +26,7 @@
 
         <div class="container "><!-- start div container -->
 
-        <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+        
         <div class="jumbotron text-center" style="margin-top:10px;">    
             <h3 style="color:#024292;">STANDART TRAINING CENTER </h3>
             <hr >
@@ -30,8 +35,8 @@
              rapidement ou de manière approfondie, nos programmes de formation composés de plusieurs 
              cours répondent à vos besoins de compétences informatiques et organisationnelles</h6>
          </div>
-
-         <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+        
+         
         <div class="jumbotron text-center" style="margin-top:10px;">     
                 <section class="table-responsive">
                     <table class="table table-bordered table-striped table-condensed">
@@ -49,16 +54,13 @@
                             @foreach($allCours as $unCours)
                             <tr>
                                 <td><a href="#{{$unCours->nom_cours}}" style="color:black;">{{$unCours->nom_cours}}</a></td>
-                                <td>{{$unCours->duree_cours}}</td>
-                                <td>{{$unCours->prix_cours}} $</td>
+                                <td><a href="#{{$unCours->nom_cours}}" style="color:black;">{{$unCours->duree_cours}}</a></td>
+                                <td><a href="#{{$unCours->nom_cours}}" style="color:black;">{{$unCours->prix_cours}} $</a></td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </section>
-
-
-
          </div>
          
           
@@ -90,7 +92,7 @@
                        </dl>
                    </section>
                    <div class="col-lg-offset-1 col-md-offset-1  col-lg-4 col-md-4 col-sm-4 col-xs-4" >
-                     <a href="formulaire/{{$unCours->id_cours}}" class="btn btn-primary btn-md "style="margin-top:30%;" role="button"><span class="glyphicon glyphicon-calendar" ></span><br/>Reserver<br/> {{$unCours->prix_cours}} US $</a>
+                     <a href="{{url('formulaire')}}/{{$unCours->id}}" class="btn btn-primary btn-md "style="margin-top:30%;" role="button"><span class="glyphicon glyphicon-calendar" ></span><br/>Reserver<br/> {{$unCours->prix_cours}} US $</a>
                    </div>
             </div>
                    <div class="row">
