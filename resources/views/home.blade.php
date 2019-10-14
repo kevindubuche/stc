@@ -86,7 +86,7 @@ position:relative; text-shadow: 1px 3px grey; animation: text 3s 1s infinite"><s
  <div class="row" >
 
                 <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
-        <div class="jumbotron text-center" style="margin-top:10px; box-shadow: 2px 2px 3px;" >    
+        <div class="jumbotron text-center" style="margin-top:10px; " >    
             <h3 style="color:#024292;">STANDART TRAINING CENTER </h3>
             <hr >
             <h6>Standard Training Center est prioritairement une institution qui dispense des cours 
@@ -98,7 +98,7 @@ position:relative; text-shadow: 1px 3px grey; animation: text 3s 1s infinite"><s
             
                 <div class="container"style="margin-top:40px;" >
                 <h6>
-                    <div class="row justify-content-center " style="background-color: rgba(237,188,27,0.8); box-shadow:2px 2px 3px black; border-radius:16px;color:white;  "> 
+                    <div class="row justify-content-center " style="background-color: rgba(237,188,27,0.8); box-shadow:-2px -2px 30px 0px black; border-radius:16px;color:white;  "> 
                         <div class=" col-md-3 col-sm-4 col-xs-12 text-center "   >             
                                 <h4><a class=" glyphicon glyphicon-check" style="color:white; text-align:justify;"> </a>  Nos formations</h4>
                                     
@@ -133,7 +133,7 @@ Vous trouverez :
                         
                         </div>
                         <br>
-                        <div class="row justify-content-center "style= "background-color: rgba(168,168,168,0.6); box-shadow:4px 4px 3px; border-radius:16px; "> 
+                        <div class="row justify-content-center "style= "background-color: rgba(168,168,168,0.6); box-shadow:-2px -2px 20px 0px; border-radius:16px; "> 
 
                     <div class="col-md-3 col-sm-4 col-xs-12 text-center ">             
                                 <h4><a class=" glyphicon glyphicon-check" style="color:white; text-align:justify;"> </a>  Library</h4>

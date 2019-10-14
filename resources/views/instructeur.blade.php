@@ -21,7 +21,7 @@
  <div class="container ">
 
 
-            <div class="jumbotron text-center" style="margin-top:10px;">    
+            <div class="jumbotron text-center" style="margin-top:10px;box-shadow: -2px -2px 60px 10px;">    
             <h5 style="color:#024292;">LA FORMATION AU STC EST UNE AFFAIRE DE QUALITÉ, DE CONSULTATION ET DE PRATIQUE POUR FORMER LES MEILLEURS PROFESSSIONNELS SUR LE MARCHÉ </h5>
             <hr >
             <h6>Dans l'optique de réaliser cela, nous offrons un training complet et up to date grâce a des instructeurs certifiés et nos consultants.

@@ -27,7 +27,7 @@
         <div class="container "><!-- start div container -->
 
         
-        <div class="jumbotron text-center" style="margin-top:10px;">    
+        <div class="jumbotron text-center" style="margin-top:10px; box-shadow: -2px -2px 60px 10px;">    
             <h3 style="color:#024292;">STANDART TRAINING CENTER </h3>
             <hr >
             <h6>Que vous souhaitiez, pour vous ou vos équipes, résoudre un problème immédiat, 
@@ -70,13 +70,13 @@
                 if ($i%2==0)
                     {
             ?>
-            <div class="row" style="background-color: rgba(237,188,27,0.8); box-shadow:2px 2px 3px; border-radius:30px; " ><a name="{{$unCours->nom_cours}}"style="padding-top:200px; visibility:hidden;"></a>
+            <div class="row" style="background-color: rgba(237,188,27,0.8); box-shadow: -2px -2px 60px 10px; border-radius:30px; " ><a name="{{$unCours->nom_cours}}"style="padding-top:200px; visibility:hidden;"></a>
             <?php
                 }
                 else 
                 {
              ?>
-            <div class="row" style="background-color: rgba(192,192,192,0.6); box-shadow:4px 4px 3px; border-radius:30px; position:relative; " ><a name="{{$unCours->nom_cours}}"style="padding-top:200px; visibility:hidden;"></a>
+            <div class="row" style="background-color: rgba(192,192,192,0.6); box-shadow: -1px 0px 50px 2px; border-radius:30px; position:relative; " ><a name="{{$unCours->nom_cours}}"style="padding-top:200px; visibility:hidden;"></a>
             <?php } ?>       
 
             <div class="row">

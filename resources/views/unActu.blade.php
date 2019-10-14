@@ -21,7 +21,7 @@
 
 <div class="container ">
     <div class="row"><!-- strat row -->
-        <div class="col-lg-2 col-md-3 col-sm-2 col-xs-12" style="padding-right:50px;"><!-- start left part -->
+        <div class="col-lg-2 col-md-3 col-sm-2 col-xs-12" style="padding-right:50px;padding-bottom:80px;box-shadow: 2px 2px 10px 5px;"><!-- start left part -->
         
                     <h5><strong><a class=" glyphicon glyphicon-earphone" style="color:rgba(237,188,27,0.8);"> </a>    +509 3463 5232  | +509 4891 5358</strong></h5>                     
              <hr>              
@@ -66,7 +66,7 @@
         </div><!-- end middle part -->
 
         <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12"><!-- start right part -->
-            <div  style="margin-top:5px; background-color:#dee;">    
+            <div  style="margin-top:5px; background-color:#dee; box-shadow: 2px 2px 10px 5px;">    
                 <h5 style="color:#024292;"class="text-center"><strong >Fil d'actualites </strong></h5>
                 <hr >
                 @foreach($recentActu as $resActu)

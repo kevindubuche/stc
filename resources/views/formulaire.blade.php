@@ -20,7 +20,7 @@
 
             <div class="container">
             
-             <div class="row" style="background-color:#eee; box-shadow:2px 2px 3px; border-radius:16px;" >
+             <div class="row" style="background-color:#eee; box-shadow: -1px 0px 50px 2px; border-radius:16px;" >
                 <section class="col-lg-offset-4 col-md-offset-4   col-lg-4 col-md-4 col-sm-10 col-xs-10" >
                   
                 <form action="{{url('reservation')}}" method="POST">

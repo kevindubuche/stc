@@ -24,7 +24,7 @@
 <!-- end carousel_____ -->
 <div class="container ">
 
-<div class="jumbotron text-center" style="margin-top:10px;">    
+<div class="jumbotron text-center" style="margin-top:10px;box-shadow: -2px -2px 60px 10px;">    
             <h5 style="color:#024292;">MERCI DE CHOISIR STANDART TRAINING CENTER </h5>
             <hr >
             <h6>La STC est a votre disposition en ce qui concerne le training pour les certifications et pour consultation<br>
